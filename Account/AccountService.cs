@@ -12,7 +12,14 @@ namespace MyStoreNamespace
         {
             this.Repository = repository;
         }
-        
+        public void AddAccount(Account account)
+        {
+            var checkUserName =FindIDByUsername(account.UserName);
+            if (checkUserName == null)
+            {
+                Repository.Create(account);
+            }
+        }
         public Account GetAccountById(int id)
         {
             var account = Repository.ReadById(id);
@@ -23,14 +30,7 @@ namespace MyStoreNamespace
             return account;
         }
 
-        public void AddAccount(Account account)
-        {
-            var checkUserName =FindIDByUsername(account.UserName);
-            if (checkUserName == null)
-            {
-                Repository.Create(account);
-            }
-        }
+        
 
         public void UpdateAccount(int playerId,string newName,string NewPassword)
         {

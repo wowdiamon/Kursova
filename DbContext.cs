@@ -3,9 +3,9 @@ namespace MyStoreNamespace
 {
     public class DbContext
     {
-        public List<Account> Accounts { get; set; }
-        public List<Product> Products { get; set; }
-        public List<Order> Orders { get; set; }
+        internal List<Account> Accounts { get; set; }
+        internal List<Product> Products { get; set; }
+        internal List<Order> Orders { get; set; }
 
         public DbContext()
         {

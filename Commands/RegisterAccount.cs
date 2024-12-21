@@ -15,7 +15,7 @@ public class RegisterAccount : ICommands
         Console.WriteLine("=== Registration form ===");
 
         Console.Write("Enter a nickname : ");
-        string playerName = Console.ReadLine();
+        string UserName = Console.ReadLine();
         
         Console.Write("Password cannot contain spaces and password need to be at least 8 characters long\n");
         Console.Write("Enter password: ");
@@ -39,11 +39,11 @@ public class RegisterAccount : ICommands
             }
         } while (!passwordsMatch);
 
-        Account newAccount = new Account(playerName, password);
+        Account newAccount = new Account(UserName, password);
 
 
         _accountService.AddAccount(newAccount);
-        Console.WriteLine($"\n{playerName} has been added successfully.");
+        Console.WriteLine($"\n{UserName} has been added successfully.");
         Console.ReadKey();
         
     }
