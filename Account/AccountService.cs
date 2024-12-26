@@ -15,7 +15,7 @@ namespace MyStoreNamespace
         public void AddAccount(Account account)
         {
             var checkUserName =FindIDByUsername(account.UserName);
-            if (checkUserName == null)
+            if (checkUserName == -1)
             {
                 Repository.Create(account);
             }

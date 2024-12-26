@@ -49,14 +49,13 @@
                      Context.Accounts.Remove(account);
                  }
              }
-             
+
              public int FindIDByUsername(string username)
              {
-                 var player = Context.Accounts.FirstOrDefault(p => p.UserName == username) ;
-                 return player.Id; 
+                 var player = Context.Accounts.FirstOrDefault(p => p.UserName == username);
+                 return player?.Id ?? -1;
              }
-             
-         }
+    }
 
 
 
